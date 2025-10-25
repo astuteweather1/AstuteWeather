@@ -1,6 +1,6 @@
 import crypto from "crypto";
 
-// Vercel serverless config để nhận raw body
+// Vercel config: tắt bodyParser để nhận raw body
 export const config = {
   api: {
     bodyParser: false,
@@ -8,8 +8,9 @@ export const config = {
 };
 
 export default async function handler(req, res) {
+  // Chỉ chấp nhận POST
   if (req.method !== "POST") {
-    return res.status(405).send("Method not allowed");
+    return res.status(405).send("Method Not Allowed");
   }
 
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET || "myAstuteSecret123";
@@ -22,6 +23,7 @@ export default async function handler(req, res) {
     req.on("error", reject);
   });
 
+  // Kiểm tra signature
   const signature = req.headers["x-hub-signature-256"];
   if (!signature) return res.status(401).send("Missing signature");
 
@@ -31,10 +33,19 @@ export default async function handler(req, res) {
   const isValid = crypto.timingSafeEqual(Buffer.from(signature), Buffer.from(digest));
   if (!isValid) return res.status(401).send("Invalid signature");
 
+  // Parse payload JSON
   const payload = JSON.parse(buf.toString());
   const event = req.headers["x-github-event"];
-  console.log("GitHub event:", event);
-  console.log("Payload:", payload);
 
-  res.status(200).json({ message: "Webhook received" });
+  console.log("==== GitHub Webhook Received ====");
+  console.log("Event:", event);
+  console.log("Payload:", payload);
+  console.log("================================");
+
+  // TODO: Xử lý tự động update dữ liệu 63 tỉnh
+  if (event === "push") {
+    console.log("Push detected! Bạn có thể rebuild dữ liệu thời tiết ở đây.");
+  }
+
+  res.status(200).json({ message: "Webhook received successfully" });
 }
