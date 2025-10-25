@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AstuteWeather – Cập nhật thông tin thời tiết 24/7</title>
+<link rel="icon" href="assets/favicon.png">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f8f9fa;
+    color: #333;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  header img.logo {
+    height: 50px;
+  }
+  nav {
+    margin-left: auto;
+  }
+  nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  nav a:hover { color: #007bff; }
+  .container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+  }
+  .card {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  #datetime {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  select {
+    padding: 8px 12px;
+    font-size: 1em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  iframe {
+    border-radius: 12px;
+    border: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <img src="assets/logo.png" alt="Logo AstuteWeather" class="logo">
+  <nav>
+    <a href="index.html">Home</a>
+  </nav>
+</header>
+
+<div class="container">
+  <div id="datetime"></div>
+
+  <select id="provinceSelect" onchange="goToProvince()">
+    <option value="">Chọn tỉnh/thành phố</option>
+    <option value="provinces/HaNoi/index.html">Hà Nội</option>
+    <option value="provinces/DaNang/index.html">Đà Nẵng</option>
+    <option value="provinces/HoChiMinh/index.html">Hồ Chí Minh</option>
+    <!-- Thêm 60 tỉnh còn lại -->
+  </select>
+
+  <div class="card">
+    <h2>Bản đồ Gió (Windy)</h2>
+    <iframe src="https://embed.windy.com/embed2.html?lat=14.0583&lon=108.2772&zoom=5&level=surface&overlay=wind&product=ecmwf" width="100%" height="500"></iframe>
+  </div>
+
+  <div class="card">
+    <h2>Ảnh Vệ tinh NOAA</h2>
+    <img src="https://www.ssd.noaa.gov/jma/wpac/avn-animated.gif" alt="NOAA Satellite" width="100%">
+  </div>
+</div>
+
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    const options = { 
+      weekday:'long', year:'numeric', month:'long', day:'numeric', 
+      hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false, 
+      timeZone:'Asia/Ho_Chi_Minh' 
+    };
+    document.getElementById('datetime').textContent = now.toLocaleString('vi-VN', options);
+  }
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
+
+  function goToProvince() {
+    const select = document.getElementById('provinceSelect');
+    if(select.value) {
+      window.location.href = select.value;
+    }
+  }
+</script>
+
+</body>
+</html>
