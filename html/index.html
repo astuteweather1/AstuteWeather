@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AstuteWeather – Cập nhật thông tin thời tiết 24/7</title>
-<link rel="icon" href="./assets/Biểu tượng Logo Favicon.png">
+<link rel="icon" href="./assets/favicon.png">
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -76,7 +76,7 @@
 <body>
 
 <header>
-  <img src="./assets/Biểu tượng Logo AstuteWeather.png" alt="Logo AstuteWeather" class="logo">
+  <img src="./assets/logo.png" alt="Logo AstuteWeather" class="logo">
   <nav>
     <a href="index.html">Home</a>
   </nav>
@@ -105,6 +105,7 @@
 </div>
 
 <script>
+  // Cập nhật ngày giờ Việt Nam
   function updateDateTime() {
     const now = new Date();
     const options = { 
@@ -117,9 +118,11 @@
   updateDateTime();
   setInterval(updateDateTime, 1000);
 
+  // Chuyển tới trang tỉnh
   function goToProvince() {
     const select = document.getElementById('provinceSelect');
     if(select.value) {
+      // Vercel: URL sẽ là /provinces/<TênTỉnh>/index.html
       window.location.href = select.value;
     }
   }
