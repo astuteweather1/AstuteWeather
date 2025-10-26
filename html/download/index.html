@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstuteWeather - Tải ứng dụng</title>
+  <link rel="icon" href="/public/favicon.png">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="/public/logo.png" alt="AstuteWeather Logo" class="logo">
+    <h1>AstuteWeather</h1>
+    <p>Chọn phiên bản ứng dụng để tải:</p>
+    
+    <select id="versionSelect">
+      <option value="1.0">1.0</option>
+      <option value="1.1">1.1</option>
+    </select>
+
+    <div class="buttons">
+      <a id="apkBtn" href="files/astuteweather.apk" download class="btn">Tải APK (Android)</a>
+      <a id="ipaBtn" href="itms-services://?action=download-manifest&url=https://astuteweather.vercel.app/download/files/astuteweather.plist" class="btn">Tải IPA (iOS)</a>
+    </div>
+  </div>
+</body>
+</html>
