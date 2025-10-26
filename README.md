@@ -1,6 +1,6 @@
 # AstuteWeather
 <p align="center">
-  <img src="https://raw.githubusercontent.com/astuteweather1/AstuteWeather/refs/heads/main/html/assets/Bi%E1%BB%83u%20t%C6%B0%E1%BB%A3ng%20Logo%20AstuteWeather.png" alt="AstuteWeather Logo" width="200"/>
+  <img src="https://raw.githubusercontent.com/astuteweather1/Ttyy/refs/heads/main/Bi%E1%BB%83u_t%C6%B0%E1%BB%A3ng_Logo_AstuteWeather-removebg-preview.png?token=GHSAT0AAAAAADN3WKO7G4QBSF4NUBBZLE7S2H5O6AQ" alt="AstuteWeather Logo" width="200"/>
 </p>
 
 <h1 align="center">AstuteWeather 🌤️</h1>
