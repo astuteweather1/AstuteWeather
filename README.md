@@ -1,6 +1,6 @@
 # AstuteWeather
 <p align="center">
-  <img src="https://i.ibb.co/7KxqPZB/astuteweather-logo.png" alt="AstuteWeather Logo" width="200"/>
+  <img src="https://raw.githubusercontent.com/astuteweather1/AstuteWeather/refs/heads/main/html/assets/Bi%E1%BB%83u%20t%C6%B0%E1%BB%A3ng%20Logo%20AstuteWeather.png" alt="AstuteWeather Logo" width="200"/>
 </p>
 
 <h1 align="center">AstuteWeather 🌤️</h1>
