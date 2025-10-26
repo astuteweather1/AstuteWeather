@@ -1,0 +1,36 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "fullscreen",
+  "name": "AstuteWeather",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "astuteweather.vercel",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "https://astuteweather.vercel.app/assets/images (1).png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "isSquare": true,
+      "isPng": true,
+      "isWebp": false,
+      "isJpg": false,
+      "width": 512,
+      "is512x512": true,
+      "is256x256": false,
+      "is192x192": false
+    }
+  ],
+  "id": "com.astuteweather.app",
+  "description": "AstuteWeather là ứng dụng dự báo thời tiết toàn diện cho Việt Nam. \nBạn có thể xem nhiệt độ, độ ẩm, tốc độ gió, chỉ số sương và dự báo trong 7 ngày của tất cả 63 tỉnh thành. \nGiao diện trực quan, dễ sử dụng, cập nhật thông tin nhanh chóng và chính xác. \nAstuteWeather giúp bạn luôn chuẩn bị tốt cho mọi điều kiện thời tiết, mọi lúc mọi nơi.",
+  "lang": "vi",
+  "display_override": [
+    "window-controls-overlay",
+    "fullscreen"
+  ],
+  "categories": [
+    "weather"
+  ]
+}
