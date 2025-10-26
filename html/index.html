@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<!-- SEO cơ bản -->
-<meta name="description" content="AstuteWeather – Cập nhật thông tin thời tiết 24/7 tại Việt Nam. Dự báo thời tiết, bản đồ gió, ảnh vệ tinh NOAA.">
-<meta name="keywords" content="AstuteWeather, thời tiết, dự báo, Hà Nội, Đà Nẵng, Hồ Chí Minh, Windy, NOAA">
-<meta name="author" content="AstuteWeather">
-<meta property="og:title" content="AstuteWeather – Cập nhật thông tin thời tiết 24/7">
-<meta property="og:description" content="Dự báo thời tiết, bản đồ gió, ảnh vệ tinh NOAA. Cập nhật thông tin 24/7.">
-<meta property="og:image" content="https://astuteweather.vercel.app/assets/Biểu tượng Logo Favicon.png">
-<meta property="og:url" content="https://astuteweather.vercel.app/">
-<meta property="og:type" content="website">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AstuteWeather – Cập nhật thông tin thời tiết 24/7</title>
-<link rel="icon" href="/assets/Biểu tượng Logo Favicon.png" type="image/png">
+<title>AstuteWeather – Cập nhật thời tiết 24/7</title>
+<link rel="icon" href="assets/Biểu tượng Logo Favicon.png" type="image/png">
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -46,6 +37,9 @@
     transition: color 0.3s;
   }
   nav a:hover { color: #007bff; }
+  .banner {
+    background:#007bff; color:#fff; text-align:center; padding:10px; font-weight:bold; font-size:1.1em;
+  }
   .container {
     max-width: 1200px;
     margin: 20px auto;
@@ -64,28 +58,42 @@
     margin-bottom: 20px;
     color: #555;
   }
-  select {
-    padding: 8px 12px;
-    font-size: 1em;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-    width: 100%;
-    max-width: 300px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
   iframe {
     border-radius: 12px;
     border: none;
   }
+  .card ul {
+    padding-left: 20px;
+  }
+  .card ul li {
+    margin-bottom: 5px;
+  }
+  .card a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  .card a:hover {
+    text-decoration: underline;
+  }
+  .download-links {
+    display:flex; flex-wrap:wrap; gap:20px; margin-top:10px;
+  }
+  .download-links a {
+    flex:1; text-align:center; padding:15px; border-radius:10px; text-decoration:none; font-weight:bold;
+  }
+  .apk { background:#3ddc84; color:#fff; }
+  .ipa { background:#000; color:#fff; }
 </style>
 </head>
 <body>
 
+<!-- Banner ra mắt -->
+<div class="banner">
+  🚀 AstuteWeather chính thức ra mắt vào 26/10/2025! Cập nhật thông tin thời tiết 24/7.
+</div>
+
 <header>
-  <img src="./assets/Biểu tượng Logo AstuteWeather.png" alt="Logo AstuteWeather" class="logo">
+  <img src="assets/Biểu tượng Logo AstuteWeather.png" alt="Logo AstuteWeather" class="logo">
   <nav>
     <a href="index.html">Home</a>
   </nav>
@@ -94,83 +102,50 @@
 <div class="container">
   <div id="datetime"></div>
 
-  <select id="provinceSelect" onchange="goToProvince()">
-    <option value="">Chọn tỉnh/thành phố</option>
-    <option value="provinces/HaNoi/index.html">Hà Nội</option>
-    <option value="provinces/HaiPhong/index.html">Hải Phòng</option>
-    <option value="provinces/HoChiMinh/index.html">Hồ Chí Minh</option>
-    <option value="provinces/HaTinh/index.html">Hà Tĩnh</option>
-    <option value="provinces/HaNam/index.html">Hà Nam</option>
-    <option value="provinces/HaiDuong/index.html">Hải Dương</option>
-    <option value="provinces/HaGiang/index.html">Hà Giang</option>
-    <option value="provinces/HoaBinh/index.html">Hoà Bình</option>
-    <option value="provinces/HauGiang/index.html">Hậu Giang</option>
-    <option value="provinces/HungYen/index.html">Hưng Yên</option>
-    <option value="provinces/AnGiang/index.html">An Giang</option>
-    <option value="provinces/BaRiaVungTau/index.html">Bà Rịa - Vũng Tàu</option>
-    <option value="provinces/BacLieu/index.html">Bạc Liêu</option>
-    <option value="provinces/BacGiang/index.html">Bắc Giang</option>
-    <option value="provinces/BacKan/index.html">Bắc Kạn</option>
-    <option value="provinces/BenTre/index.html">Bến Tre</option>
-    <option value="provinces/BinhDuong/index.html">Bình Dương</option>
-    <option value="provinces/BinhPhuoc/index.html">Bình Phước</option>
-    <option value="provinces/BinhThuan/index.html">Bình Thuận</option>
-    <option value="provinces/BinhDinh/index.html">Bình Định</option>
-    <option value="provinces/CaMau/index.html">Cà Mau</option>
-    <option value="provinces/CanTho/index.html">Cần Thơ</option>
-    <option value="provinces/DakLak/index.html">Đắk Lắk</option>
-    <option value="provinces/DakNong/index.html">Đắk Nông</option>
-    <option value="provinces/DienBien/index.html">Điện Biên</option>
-    <option value="provinces/DongNai/index.html">Đồng Nai</option>
-    <option value="provinces/DongThap/index.html">Đồng Tháp</option>
-    <option value="provinces/DaNang/index.html">Đà Nẵng</option>
-    <option value="provinces/GiaLai/index.html">Gia Lai</option>
-    <option value="provinces/KhanhHoa/index.html">Khánh Hòa</option>
-    <option value="provinces/KienGiang/index.html">Kiên Giang</option>
-    <option value="provinces/KonTum/index.html">Kon Tum</option>
-    <option value="provinces/LaiChau/index.html">Lai Châu</option>
-    <option value="provinces/LamDong/index.html">Lâm Đồng</option>
-    <option value="provinces/LangSon/index.html">Lạng Sơn</option>
-    <option value="provinces/LaoCai/index.html">Lào Cai</option>
-    <option value="provinces/NamDinh/index.html">Nam Định</option>
-    <option value="provinces/NgheAn/index.html">Nghệ An</option>
-    <option value="provinces/NinhBinh/index.html">Ninh Bình</option>
-    <option value="provinces/NinhThuan/index.html">Ninh Thuận</option>
-    <option value="provinces/PhuTho/index.html">Phú Tho</option>
-    <option value="provinces/PhuYen/index.html">Phú Yên</option>
-    <option value="provinces/QuangBinh/index.html">Quảng Bình</option>
-    <option value="provinces/QuangNam/index.html">Quảng Nam</option>
-    <option value="provinces/QuangNgai/index.html">Quảng Ngãi</option>
-    <option value="provinces/QuangNinh/index.html">Quảng Ninh</option>
-    <option value="provinces/QuangTri/index.html">Quảng Trị</option>
-    <option value="provinces/SocTrang/index.html">Sóc Trăng</option>
-    <option value="provinces/SonLa/index.html">Sơn La</option>
-    <option value="provinces/TayNinh/index.html">Tây Ninh</option>
-    <option value="provinces/ThaiBinh/index.html">Thái Bình</option>
-    <option value="provinces/ThaiNguyen/index.html">Thái Nguyên</option>
-    <option value="provinces/ThanhHoa/index.html">Thanh Hoá</option>
-    <option value="provinces/ThuaThienHue/index.html">Thừa Thiên Huế</option>
-    <option value="provinces/TienGiang/index.html">Tiền Giang</option>
-    <option value="provinces/TraVinh/index.html">Trà Vinh</option>
-    <option value="provinces/TuyenQuang/index.html">Tuyên Quang</option>
-    <option value="provinces/VinhLong/index.html">Vĩnh Long</option>
-    <option value="provinces/VinhPhuc/index.html">Vĩnh Phúc</option>
-    <option value="provinces/???/index.html">???</option>
-  </select>
- 
+  <!-- Dự báo thời tiết -->
   <div class="card">
-    <h2>Bản đồ Gió (Windy)</h2>
-    <iframe src="https://embed.windy.com/embed2.html?lat=14.0583&lon=108.2772&zoom=5&level=surface&overlay=wind&product=ecmwf" width="100%" height="500"></iframe>
+    <h2>Dự báo thời tiết Hà Nội</h2>
+    <iframe src="https://thoitietvn.edu.vn/iframe?term=1&days=7&hC=%23ffffff&hB=%23000000&bC=%23000000&tC=%23000000&lC=%23000000" width="100%" height="500"></iframe>
   </div>
 
+  <!-- Bản đồ Gió Windy -->
+  <div class="card">
+    <h2>Bản đồ Gió</h2>
+    <iframe src="https://embed.windy.com/embed2.html?lat=21.0278&lon=105.8342&zoom=8&level=surface&overlay=wind&product=ecmwf" width="100%" height="500"></iframe>
+  </div>
+
+  <!-- Ảnh vệ tinh NOAA -->
   <div class="card">
     <h2>Ảnh Vệ tinh NOAA</h2>
     <img src="https://www.ssd.noaa.gov/jma/wpac/avn-animated.gif" alt="NOAA Satellite" width="100%">
   </div>
+
+  <!-- Chăm sóc khách hàng -->
+  <div class="card">
+    <h2>Chăm sóc khách hàng</h2>
+    <p>Liên hệ với chúng tôi để được hỗ trợ:</p>
+    <ul>
+      <li>Email: support@astuteweather.com</li>
+      <li>Điện thoại: 1900-1234</li>
+      <li>Fanpage: <a href="https://facebook.com/astuteweather" target="_blank">AstuteWeather</a></li>
+    </ul>
+  </div>
+
+  <!-- Tải ứng dụng APK / IPA -->
+  <div class="card">
+    <h2>Tải ứng dụng AstuteWeather</h2>
+    <p>Cập nhật thông tin thời tiết 24/7 trên điện thoại của bạn:</p>
+    <div class="download-links">
+      <a href="downloads/AstuteWeather.apk" download class="apk">📱 Tải APK (Android)</a>
+      <a href="downloads/AstuteWeather.ipa" download class="ipa">🍎 Tải IPA (iOS)</a>
+    </div>
+    <p style="margin-top:10px; font-size:0.9em; color:#555;">Lưu ý: IPA cần cài đặt qua TestFlight hoặc máy đã jailbreak để cài ngoài App Store.</p>
+  </div>
+
 </div>
 
 <script>
-  // Cập nhật ngày giờ Việt Nam
+  // Cập nhật ngày giờ Hà Nội
   function updateDateTime() {
     const now = new Date();
     const options = { 
@@ -182,15 +157,6 @@
   }
   updateDateTime();
   setInterval(updateDateTime, 1000);
-
-  // Chuyển tới trang tỉnh
-  function goToProvince() {
-    const select = document.getElementById('provinceSelect');
-    if(select.value) {
-      // Vercel: URL sẽ là /provinces/<TênTỉnh>/index.html
-      window.location.href = select.value;
-    }
-  }
 </script>
 
 </body>
