@@ -10,10 +10,10 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/AstuteWeather/AstuteWeather/stargazers">
+  <a href="https://github.com/AstuteWeather1/AstuteWeather/stargazers">
     <img src="https://img.shields.io/github/stars/AstuteWeather/AstuteWeather?style=social" alt="GitHub stars"/>
   </a>
-  <a href="https://github.com/AstuteWeather">
+  <a href="https://github.com/AstuteWeather1">
     <img src="https://img.shields.io/github/followers/AstuteWeather?label=Follow&style=social" alt="GitHub followers"/>
   </a>
   <img src="https://img.shields.io/github/commit-activity/m/AstuteWeather/AstuteWeather?style=flat-square" alt="Commit activity"/>
@@ -30,7 +30,7 @@
 - Ảnh vệ tinh cập nhật từng giờ.  
 - Dự báo chính xác cho **63 tỉnh thành Việt Nam**.  
 
-Trang web sử dụng dữ liệu trực tiếp từ [thoitiet.vn](https://thoitiet.vn) và có giao diện hiện đại, dễ sử dụng.
+Trang web sử dụng dữ liệu trực tiếp từ [thoitietvn.edu.vn](https://thoitietvn.edu.vn) và có giao diện hiện đại, dễ sử dụng.
 
 ---
 
@@ -46,7 +46,7 @@ Trang web sử dụng dữ liệu trực tiếp từ [thoitiet.vn](https://thoit
 ## 📌 Liên kết
 
 - Trang web chính: [AstuteWeather](https://astuteweather.vercel.app)  
-- Repo GitHub: [AstuteWeather](https://github.com/AstuteWeather/AstuteWeather)
+- Repo GitHub: [AstuteWeather](https://github.com/AstuteWeather1/AstuteWeather)
 
 ---
 
