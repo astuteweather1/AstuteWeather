@@ -1,163 +1,211 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AstuteWeather – Cập nhật thời tiết 24/7</title>
-<link rel="icon" href="assets/images (1).png" type="image/png">
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f8f9fa;
-    color: #333;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  header img.logo {
-    height: 50px;
-  }
-  nav {
-    margin-left: auto;
-  }
-  nav a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-  nav a:hover { color: #007bff; }
-  .banner {
-    background:#007bff; color:#fff; text-align:center; padding:10px; font-weight:bold; font-size:1.1em;
-  }
-  .container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 15px;
-  }
-  .card {
-    background: #fff;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  #datetime {
-    text-align: center;
-    font-size: 1.2em;
-    margin-bottom: 20px;
-    color: #555;
-  }
-  iframe {
-    border-radius: 12px;
-    border: none;
-  }
-  .card ul {
-    padding-left: 20px;
-  }
-  .card ul li {
-    margin-bottom: 5px;
-  }
-  .card a {
-    color: #007bff;
-    text-decoration: none;
-  }
-  .card a:hover {
-    text-decoration: underline;
-  }
-  .download-links {
-    display:flex; flex-wrap:wrap; gap:20px; margin-top:10px;
-  }
-  .download-links a {
-    flex:1; text-align:center; padding:15px; border-radius:10px; text-decoration:none; font-weight:bold;
-  }
-  .apk { background:#3ddc84; color:#fff; }
-  .ipa { background:#000; color:#fff; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstuteWeather - Ứng dụng thời tiết chính thức</title>
+  <link rel="icon" type="image/png" href="Biểu tượng Logo Favicon.png">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
+      color: #222;
+    }
+    header {
+      background: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img {
+      height: 40px;
+    }
+    h1 {
+      text-align: center;
+      color: #ff6600;
+      margin-top: 25px;
+    }
+    .banner {
+      text-align: center;
+      background: linear-gradient(45deg, #ff6600, #ff9900);
+      color: white;
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .download {
+      text-align: center;
+      margin: 30px auto;
+    }
+    button {
+      background: #ff6600;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #ff8533;
+    }
+    .dropdown {
+      margin: 25px auto;
+      text-align: center;
+    }
+    select {
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 15px;
+    }
+    footer {
+      background: #fff;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      margin-top: 40px;
+      border-top: 1px solid #eee;
+    }
+    footer a {
+      color: #ff6600;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <img src="Biểu tượng Logo AstuteWeather.png" alt="AstuteWeather Logo">
+    <h3>AstuteWeather</h3>
+  </header>
 
-<!-- Banner ra mắt -->
-<div class="banner">
-  🚀 AstuteWeather chính thức ra mắt vào 26/10/2025! Cập nhật thông tin thời tiết 24/7.
-</div>
-
-<header>
-  <img src="assets/Biểu tượng Logo AstuteWeather.png" alt="Logo AstuteWeather" class="logo">
-  <nav>
-    <a href="index.html">Home</a>
-  </nav>
-</header>
-
-<div class="container">
-  <div id="datetime"></div>
-
-  <!-- Dự báo thời tiết -->
-  <div class="card">
-    <h2>Dự báo thời tiết Hà Nội</h2>
-    <iframe src="https://thoitietvn.edu.vn/iframe?term=1&days=7&hC=%23ffffff&hB=%23000000&bC=%23000000&tC=%23000000&lC=%23000000" width="100%" height="500"></iframe>
+  <div class="banner">
+    🎉 AstuteWeather chính thức ra mắt ngày 26/10/2025!  
   </div>
 
-  <!-- Bản đồ Gió Windy -->
-  <div class="card">
-    <h2>Bản đồ Gió</h2>
-    <iframe src="https://embed.windy.com/embed2.html?lat=21.0278&lon=105.8342&zoom=8&level=surface&overlay=wind&product=ecmwf" width="100%" height="500"></iframe>
+  <h1>Chào mừng đến với AstuteWeather</h1>
+  <p style="text-align:center; max-width:600px; margin:auto;">
+    Ứng dụng dự báo thời tiết chính xác, nhanh chóng và thân thiện nhất cho người dùng Việt Nam.  
+    Cập nhật liên tục theo khu vực, kèm hỗ trợ giọng nói và AI thông minh.
+  </p>
+
+  <div class="dropdown">
+    <h3>Chọn tỉnh thành để xem thời tiết:</h3>
+    <select>
+      <option value="">-- Chọn tỉnh/thành phố --</option>
+      <option>Hà Nội</option>
+      <option>Hồ Chí Minh</option>
+      <option>Đà Nẵng</option>
+      <option>Hải Phòng</option>
+      <option>Cần Thơ</option>
+      <option>An Giang</option>
+      <option>Bà Rịa - Vũng Tàu</option>
+      <option>Bắc Giang</option>
+      <option>Bắc Kạn</option>
+      <option>Bạc Liêu</option>
+      <option>Bắc Ninh</option>
+      <option>Bến Tre</option>
+      <option>Bình Dương</option>
+      <option>Bình Định</option>
+      <option>Bình Phước</option>
+      <option>Bình Thuận</option>
+      <option>Cà Mau</option>
+      <option>Cao Bằng</option>
+      <option>Đắk Lắk</option>
+      <option>Đắk Nông</option>
+      <option>Điện Biên</option>
+      <option>Đồng Nai</option>
+      <option>Đồng Tháp</option>
+      <option>Gia Lai</option>
+      <option>Hà Giang</option>
+      <option>Hà Nam</option>
+      <option>Hà Tĩnh</option>
+      <option>Hải Dương</option>
+      <option>Hậu Giang</option>
+      <option>Hòa Bình</option>
+      <option>Hưng Yên</option>
+      <option>Khánh Hòa</option>
+      <option>Kiên Giang</option>
+      <option>Kon Tum</option>
+      <option>Lai Châu</option>
+      <option>Lâm Đồng</option>
+      <option>Lạng Sơn</option>
+      <option>Lào Cai</option>
+      <option>Long An</option>
+      <option>Nam Định</option>
+      <option>Nghệ An</option>
+      <option>Ninh Bình</option>
+      <option>Ninh Thuận</option>
+      <option>Phú Thọ</option>
+      <option>Phú Yên</option>
+      <option>Quảng Bình</option>
+      <option>Quảng Nam</option>
+      <option>Quảng Ngãi</option>
+      <option>Quảng Ninh</option>
+      <option>Quảng Trị</option>
+      <option>Sóc Trăng</option>
+      <option>Sơn La</option>
+      <option>Tây Ninh</option>
+      <option>Thái Bình</option>
+      <option>Thái Nguyên</option>
+      <option>Thanh Hóa</option>
+      <option>Thừa Thiên Huế</option>
+      <option>Tiền Giang</option>
+      <option>Trà Vinh</option>
+      <option>Tuyên Quang</option>
+      <option>Vĩnh Long</option>
+      <option>Vĩnh Phúc</option>
+      <option>Yên Bái</option>
+    </select>
   </div>
 
-  <!-- Ảnh vệ tinh NOAA -->
-  <div class="card">
-    <h2>Ảnh Vệ tinh NOAA</h2>
-    <img src="https://www.ssd.noaa.gov/jma/wpac/avn-animated.gif" alt="NOAA Satellite" width="100%">
+  <div class="download">
+    <h3>Tải ứng dụng chính thức:</h3>
+    <button>📱 Tải APK (Android)</button>
+    <button>🍎 Tải IPA (iOS)</button>
   </div>
 
-  <!-- Chăm sóc khách hàng -->
-  <div class="card">
-    <h2>Chăm sóc khách hàng</h2>
-    <p>Liên hệ với chúng tôi để được hỗ trợ:</p>
-    <ul>
-      <li>Email: support@astuteweather.com</li>
-      <li>Điện thoại: 1900-1234</li>
-      <li>Fanpage: <a href="https://facebook.com/astuteweather" target="_blank">AstuteWeather</a></li>
-    </ul>
+  <div style="text-align:center; margin:30px;">
+    <h3>💬 Chăm sóc khách hàng</h3>
+    <p>Liên hệ hỗ trợ qua email: <a href="mailto:support@astuteweather.com">support@astuteweather.com</a></p>
   </div>
 
-  <!-- Tải ứng dụng APK / IPA -->
-  <div class="card">
-    <h2>Tải ứng dụng AstuteWeather</h2>
-    <p>Cập nhật thông tin thời tiết 24/7 trên điện thoại của bạn:</p>
-    <div class="download-links">
-      <a href="downloads/AstuteWeather.apk" download class="apk">📱 Tải APK (Android)</a>
-      <a href="downloads/AstuteWeather.ipa" download class="ipa">🍎 Tải IPA (iOS)</a>
-    </div>
-    <p style="margin-top:10px; font-size:0.9em; color:#555;">Lưu ý: IPA cần cài đặt qua TestFlight hoặc máy đã jailbreak để cài ngoài App Store.</p>
-  </div>
-
-</div>
-
-<script>
-  // Cập nhật ngày giờ Hà Nội
-  function updateDateTime() {
-    const now = new Date();
-    const options = { 
-      weekday:'long', year:'numeric', month:'long', day:'numeric', 
-      hour:'2-digit', minute:'2-digit', second:'2-digit', hour12:false, 
-      timeZone:'Asia/Ho_Chi_Minh' 
-    };
-    document.getElementById('datetime').textContent = now.toLocaleString('vi-VN', options);
-  }
-  updateDateTime();
-  setInterval(updateDateTime, 1000);
-</script>
-
+  <footer>
+    © 2025 AstuteWeather |  
+    <a href="privacy.html">Chính sách quyền riêng tư</a> ·  
+    <a href="terms.html">Điều khoản dịch vụ</a>
+  </footer>
 </body>
+<footer style="background:#000; color:#fff; text-align:center; padding:30px 10px; margin-top:40px; font-family:'Segoe UI',sans-serif;">
+  <div style="max-width:900px; margin:auto;">
+    <img src="assets/Biểu tượng Logo AstuteWeather.png" alt="AstuteWeather" style="height:50px; vertical-align:middle;">
+    <h3 style="margin:10px 0 5px 0; font-size:20px;">AstuteWeather - Cập nhật thông tin thời tiết 24/7</h3>
+    <p style="margin:0; font-size:14px;">© 2025 AstuteWeather. Mọi quyền được bảo lưu.</p>
+    <div style="margin-top:10px;">
+      <a href="privacy.html" class="footer-link">Chính sách bảo mật</a> |
+      <a href="terms.html" class="footer-link">Điều khoản dịch vụ</a>
+    </div>
+  </div>
+
+  <style>
+    .footer-link {
+      color:#ff6600;
+      margin:0 10px;
+      text-decoration:none;
+      transition:color 0.3s ease, text-shadow 0.3s ease;
+    }
+    .footer-link:hover {
+      color:#ffa64d;
+      text-shadow:0 0 5px #ff6600;
+    }
+  </style>
+</footer>
+  
 </html>
