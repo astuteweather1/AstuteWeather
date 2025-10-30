@@ -1,211 +1,221 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AstuteWeather - Ứng dụng thời tiết chính thức</title>
-  <link rel="icon" type="image/png" href="AstuteWeather Favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AstuteWeather - Dự báo thời tiết Việt Nam</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/astuteweather1/AstuteWeather/main/html/assets/AstuteWeather%20Favicon.png" />
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(to bottom, #f0f4ff, #e9efff);
       margin: 0;
-      background: linear-gradient(to bottom right, #f5f7fa, #c3cfe2);
-      color: #222;
+      color: #000;
+      text-align: center;
     }
     header {
-      background: white;
-      padding: 15px 30px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      background-color: #fff;
+      padding: 10px 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    header img {
-      height: 40px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-    h1 {
-      text-align: center;
+    .logo img {
+      height: 45px;
+    }
+    .logo h1 {
+      font-size: 22px;
+      margin: 0;
+    }
+    .main-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 15px;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+    .main-nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 25px;
+    }
+    h2 {
       color: #ff6600;
-      margin-top: 25px;
-    }
-    .banner {
-      text-align: center;
-      background: linear-gradient(45deg, #ff6600, #ff9900);
-      color: white;
-      padding: 20px;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .download {
-      text-align: center;
-      margin: 30px auto;
-    }
-    button {
-      background: #ff6600;
-      color: white;
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      margin: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-    button:hover {
-      background: #ff8533;
-    }
-    .dropdown {
-      margin: 25px auto;
-      text-align: center;
     }
     select {
-      padding: 10px;
-      border-radius: 8px;
+      padding: 8px 10px;
+      border-radius: 5px;
       border: 1px solid #ccc;
+      font-size: 16px;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 16px;
+      background-color: #ff6600;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
       font-size: 15px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e65c00;
+    }
+    iframe {
+      border: none;
+      width: 95%;
+      height: 480px;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+    img {
+      border-radius: 10px;
+      margin-top: 20px;
+      width: 95%;
+      max-width: 900px;
     }
     footer {
-      background: #fff;
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      margin-top: 40px;
-      border-top: 1px solid #eee;
+      background-color: #000;
+      color: #fff;
+      padding: 15px 0;
+      margin-top: 30px;
     }
     footer a {
-      color: #ff6600;
+      color: #ff9900;
       text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
+      margin: 0 8px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img src="AstuteWeather Logo.png" alt="AstuteWeather Logo">
-    <h3>AstuteWeather</h3>
+    <div class="logo">
+      <img src="https://raw.githubusercontent.com/astuteweather1/AstuteWeather/main/html/assets/AstuteWeather%20Logo.png" alt="Biểu tượng Logo AstuteWeather" />
+      <h1>AstuteWeather</h1>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/index.html">Trang chủ</a></li>
+        <li><a href="/html/privacy.html">Chính sách bảo mật</a></li>
+        <li><a href="/html/terms.html">Điều khoản dịch vụ</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <div class="banner">
+<div class="banner">
     🤫 AstuteWeather sẽ ra mắt vào ngày 20/11/2025!  
-  </div>
+</div>
 
-  <h1>Chào mừng đến với AstuteWeather</h1>
-  <p style="text-align:center; max-width:600px; margin:auto;">
-    Ứng dụng dự báo thời tiết chính xác, nhanh chóng và thân thiện nhất cho người dùng Việt Nam.  
-    Cập nhật liên tục theo khu vực kèm tính năng mặt trời mọc và mặt trời lặn.
-  </p>
+ <section>
+    <h2>🌦️ Chào mừng đến với AstuteWeather</h2>
+    <p>Chọn tỉnh thành để xem thời tiết chi tiết:</p>
 
-  <div class="dropdown">
-    <h3>Chọn tỉnh thành để xem thời tiết:</h3>
-    <select>
+    <select id="provinceSelect">
       <option value="">-- Chọn tỉnh/thành phố --</option>
-      <option>Hà Nội</option>
-      <option>Hồ Chí Minh</option>
-      <option>Đà Nẵng</option>
-      <option>Hải Phòng</option>
-      <option>Cần Thơ</option>
-      <option>An Giang</option>
-      <option>Bà Rịa - Vũng Tàu</option>
-      <option>Bắc Giang</option>
-      <option>Bắc Kạn</option>
-      <option>Bạc Liêu</option>
-      <option>Bắc Ninh</option>
-      <option>Bến Tre</option>
-      <option>Bình Dương</option>
-      <option>Bình Định</option>
-      <option>Bình Phước</option>
-      <option>Bình Thuận</option>
-      <option>Cà Mau</option>
-      <option>Cao Bằng</option>
-      <option>Đắk Lắk</option>
-      <option>Đắk Nông</option>
-      <option>Điện Biên</option>
-      <option>Đồng Nai</option>
-      <option>Đồng Tháp</option>
-      <option>Gia Lai</option>
-      <option>Hà Giang</option>
-      <option>Hà Nam</option>
-      <option>Hà Tĩnh</option>
-      <option>Hải Dương</option>
-      <option>Hậu Giang</option>
-      <option>Hòa Bình</option>
-      <option>Hưng Yên</option>
-      <option>Khánh Hòa</option>
-      <option>Kiên Giang</option>
-      <option>Kon Tum</option>
-      <option>Lai Châu</option>
-      <option>Lâm Đồng</option>
-      <option>Lạng Sơn</option>
-      <option>Lào Cai</option>
-      <option>Long An</option>
-      <option>Nam Định</option>
-      <option>Nghệ An</option>
-      <option>Ninh Bình</option>
-      <option>Ninh Thuận</option>
-      <option>Phú Thọ</option>
-      <option>Phú Yên</option>
-      <option>Quảng Bình</option>
-      <option>Quảng Nam</option>
-      <option>Quảng Ngãi</option>
-      <option>Quảng Ninh</option>
-      <option>Quảng Trị</option>
-      <option>Sóc Trăng</option>
-      <option>Sơn La</option>
-      <option>Tây Ninh</option>
-      <option>Thái Bình</option>
-      <option>Thái Nguyên</option>
-      <option>Thanh Hóa</option>
-      <option>Thừa Thiên Huế</option>
-      <option>Tiền Giang</option>
-      <option>Trà Vinh</option>
-      <option>Tuyên Quang</option>
-      <option>Vĩnh Long</option>
-      <option>Vĩnh Phúc</option>
-      <option>Yên Bái</option>
+      <option value="HaNoi">Hà Nội</option>
+      <option value="HaiPhong">Hải Phòng</option>
+      <option value="QuangNinh">Quảng Ninh</option>
+      <option value="HaiDuong">Hải Dương</option>
+      <option value="BacNinh">Bắc Ninh</option>
+      <option value="NamDinh">Nam Định</option>
+      <option value="ThaiBinh">Thái Bình</option>
+      <option value="HaNam">Hà Nam</option>
+      <option value="NinhBinh">Ninh Bình</option>
+      <option value="ThanhHoa">Thanh Hóa</option>
+      <option value="NgheAn">Nghệ An</option>
+      <option value="HaTinh">Hà Tĩnh</option>
+      <option value="QuangBinh">Quảng Bình</option>
+      <option value="QuangTri">Quảng Trị</option>
+      <option value="ThuaThienHue">Thừa Thiên Huế</option>
+      <option value="DaNang">Đà Nẵng</option>
+      <option value="QuangNam">Quảng Nam</option>
+      <option value="QuangNgai">Quảng Ngãi</option>
+      <option value="BinhDinh">Bình Định</option>
+      <option value="PhuYen">Phú Yên</option>
+      <option value="KhanhHoa">Khánh Hòa</option>
+      <option value="NinhThuan">Ninh Thuận</option>
+      <option value="BinhThuan">Bình Thuận</option>
+      <option value="KonTum">Kon Tum</option>
+      <option value="GiaLai">Gia Lai</option>
+      <option value="DakLak">Đắk Lắk</option>
+      <option value="DakNong">Đắk Nông</option>
+      <option value="LamDong">Lâm Đồng</option>
+      <option value="BinhPhuoc">Bình Phước</option>
+      <option value="TayNinh">Tây Ninh</option>
+      <option value="BinhDuong">Bình Dương</option>
+      <option value="DongNai">Đồng Nai</option>
+      <option value="BaRiaVungTau">Bà Rịa - Vũng Tàu</option>
+      <option value="TPHCM">TP. Hồ Chí Minh</option>
+      <option value="LongAn">Long An</option>
+      <option value="TienGiang">Tiền Giang</option>
+      <option value="BenTre">Bến Tre</option>
+      <option value="TraVinh">Trà Vinh</option>
+      <option value="VinhLong">Vĩnh Long</option>
+      <option value="DongThap">Đồng Tháp</option>
+      <option value="AnGiang">An Giang</option>
+      <option value="KienGiang">Kiên Giang</option>
+      <option value="CanTho">Cần Thơ</option>
+      <option value="HauGiang">Hậu Giang</option>
+      <option value="SocTrang">Sóc Trăng</option>
+      <option value="BacLieu">Bạc Liêu</option>
+      <option value="CaMau">Cà Mau</option>
+      <option value="LaiChau">Lai Châu</option>
+      <option value="DienBien">Điện Biên</option>
+      <option value="SonLa">Sơn La</option>
+      <option value="HoaBinh">Hòa Bình</option>
+      <option value="LaoCai">Lào Cai</option>
+      <option value="YenBai">Yên Bái</option>
+      <option value="PhuTho">Phú Thọ</option>
+      <option value="TuyenQuang">Tuyên Quang</option>
+      <option value="HaGiang">Hà Giang</option>
+      <option value="CaoBang">Cao Bằng</option>
+      <option value="BacKan">Bắc Kạn</option>
+      <option value="LangSon">Lạng Sơn</option>
+      <option value="ThaiNguyen">Thái Nguyên</option>
+      <option value="BacGiang">Bắc Giang</option>
+      <option value="VinhPhuc">Vĩnh Phúc</option>
+      <option value="QuangTri">Quảng Trị</option>
+      <option value="QuangNam">Quảng Nam</option>
     </select>
-  </div>
 
-  <div class="download">
-    <h3>Tải ứng dụng chính thức:</h3>
-    <button>📱 Tải APK (Android)</button>
-    <button>🍎 Tải IPA (iOS)</button>
-  </div>
+    <button onclick="gotoProvince()">Xem thời tiết</button>
 
-  <div style="text-align:center; margin:30px;">
-    <h3>💬 Chăm sóc khách hàng</h3>
-    <p>Liên hệ hỗ trợ qua email: <a href="mailto:support@astuteweather.com">support@astuteweather.com</a></p>
-  </div>
+    <h3>🌀 Bản đồ Gió (Windy Map)</h3>
+    <iframe 
+      src="https://embed.windy.com/embed2.html?lat=16.5&lon=108.5&zoom=5&level=surface&overlay=wind&menu=&message=true&type=map&location=coordinates&detail=&detailLat=16.5&detailLon=108.5&metricWind=default&metricTemp=default&radarRange=-1">
+    </iframe>
+
+    <h3>🛰️ Ảnh vệ tinh (NOAA Real-Time)</h3>
+    <img src="https://cdn.star.nesdis.noaa.gov/GOES16/ABI/SECTOR/tpw/GEOCOLOR/latest.jpg" alt="Ảnh vệ tinh Việt Nam (NOAA)">
+  </section>
 
   <footer>
-    © 2025 AstuteWeather |  
-    <a href="privacy.html">Chính sách quyền riêng tư</a> ·  
-    <a href="terms.html">Điều khoản dịch vụ</a>
+    © 2025 AstuteWeather | 
+    <a href="/html/privacy.html">Chính sách bảo mật</a> |
+    <a href="/html/terms.html">Điều khoản dịch vụ</a>
   </footer>
-</body>
-<footer style="background:#000; color:#fff; text-align:center; padding:30px 10px; margin-top:40px; font-family:'Segoe UI',sans-serif;">
-  <div style="max-width:900px; margin:auto;">
-    <img src="assets/AstuteWeather Logo.png" alt="AstuteWeather" style="height:50px; vertical-align:middle;">
-    <h3 style="margin:10px 0 5px 0; font-size:20px;">AstuteWeather - Cập nhật thông tin thời tiết 24/7</h3>
-    <p style="margin:0; font-size:14px;">© 2025 AstuteWeather. Mọi quyền được bảo lưu.</p>
-    <div style="margin-top:10px;">
-      <a href="privacy.html" class="footer-link">Chính sách bảo mật</a> |
-      <a href="terms.html" class="footer-link">Điều khoản dịch vụ</a>
-    </div>
-  </div>
 
-  <style>
-    .footer-link {
-      color:#ff6600;
-      margin:0 10px;
-      text-decoration:none;
-      transition:color 0.3s ease, text-shadow 0.3s ease;
+  <script>
+    function gotoProvince() {
+      const province = document.getElementById("provinceSelect").value;
+      if (province) {
+        window.location.href = `/html/provinces/${province}/index.html`;
+      } else {
+        alert("Vui lòng chọn một tỉnh/thành phố.");
+      }
     }
-    .footer-link:hover {
-      color:#ffa64d;
-      text-shadow:0 0 5px #ff6600;
-    }
-  </style>
-</footer>
-  
+  </script>
+</body>
 </html>
